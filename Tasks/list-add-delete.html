@@ -1,0 +1,24 @@
+<div id="container">
+    <h1>My List</h1>
+    <ul id="myList" onclick="removeListItem(event)">
+      <li class="item1">Item 1</li>
+      <li class="item2">Item 2</li>
+      <li class="item3">Item 3</li>
+    </ul>
+    <button id="addButton" onclick="addListItem()">Add Item</button>
+  </div>
+  
+<script>
+    let list = document.getElementById("myList");
+    function addListItem(){
+        console.log("Add button was clicked");
+        let newItem = document.createElement("li");
+        newItem.innerText = "New item";
+        list.appendChild(newItem);
+    }
+    function removeListItem(event){
+        console.log(event.target);
+        list.removeChild(event.target);
+
+    }
+</script>

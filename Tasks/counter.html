@@ -1,0 +1,81 @@
+<style>
+    .counter {
+        width: 250px;
+        margin-top: 16%;
+        margin-left: 36%;
+        background-color: #ffffff;
+        border-radius: 16px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        text-align: center;
+    }
+
+    .counter:hover {
+        transform: scale(1.02);
+    }
+
+    .counter h3 {
+        margin-bottom: 10px;
+        font-size: 1.5rem;
+        color: #333;
+    }
+
+    #count {
+        font-size: 2.5rem;
+        margin: 10px 0;
+        color: #0077cc;
+    }
+
+    button {
+        padding: 10px 20px;
+        margin: 5px;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    #increment {
+        background-color: #28a745;
+        color: white;
+    }
+
+    #increment:hover {
+        background-color: #218838;
+    }
+
+    #decrement {
+        background-color: #dc3545;
+        color: white;
+    }
+
+    #decrement:hover {
+        background-color: #c82333;
+    }
+</style>
+
+<div class="counter">
+    <h3>Counter</h3>
+    <div id="display">
+        <h2 id="count">0</h2>
+    </div>
+    <button id="increment" onclick="increment()">Increment</button>
+    <button id="decrement" onclick="decrement()">Decrement</button>
+</div>
+
+<script>
+    let count = 0;
+    const dis = document.getElementById("count");
+
+    function increment() {
+        count++;
+        dis.innerText = count;
+    }
+
+    function decrement() {
+        count--;
+        if(count < 0) count=0;
+        dis.innerText = count;
+    }
+</script>
